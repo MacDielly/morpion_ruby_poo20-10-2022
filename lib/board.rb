@@ -4,19 +4,15 @@ class Board
 
     def initialize
         @table = []
-        # for x in "1".."3"
-        #     for y in "a".."c"
-                @table << BoardCase.new("a1", " ")
-                @table << BoardCase.new("a2", " ")
-                @table << BoardCase.new("a3", " ")
-                @table << BoardCase.new("b1", " ")
-                @table << BoardCase.new("b2", " ")
-                @table << BoardCase.new("b3", " ")
-                @table << BoardCase.new("c1", " ")
-                @table << BoardCase.new("c2", " ")
-                @table << BoardCase.new("c3", " ")
-        #     end
-        # end
+            @table << BoardCase.new("a1", " ")
+            @table << BoardCase.new("a2", " ")
+            @table << BoardCase.new("a3", " ")
+            @table << BoardCase.new("b1", " ")
+            @table << BoardCase.new("b2", " ")
+            @table << BoardCase.new("b3", " ")
+            @table << BoardCase.new("c1", " ")
+            @table << BoardCase.new("c2", " ")
+            @table << BoardCase.new("c3", " ")
         @turn = 0
     end
 
@@ -24,13 +20,14 @@ class Board
     def play_turn(player_sign)
         puts "             Quelle case souhaites tu cocher?"
 
-        puts"                    1        2        3"
+        puts"                                       "
         puts
-        puts "             a" 
-        puts ""
-        puts "             b"   
-        puts ""
-        puts "             c"   
+        puts "                    a1? |   a2?  |   a3?" 
+        puts "                 -------------------------"
+        puts "                    b1? |   b2?  |   b3?"   
+        puts "                 -------------------------"
+        puts "                    c1? |   c2?  |   c3?"   
+        puts 
         puts 
 
         puts

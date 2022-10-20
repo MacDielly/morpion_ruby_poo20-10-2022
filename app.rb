@@ -12,16 +12,16 @@ require 'board_case'
 require 'show'
 
 # #Message d'acceuil
-puts "-------------------------------------------------"
-puts "|          Aujourd'hui, c'est Morpion!          |"
-puts "|        *******************************        |"
-puts "-------------------------------------------------"
+puts "-------------------------------------------------".colorize(:yellow)
+puts "|          Aujourd'hui, c'est Morpion!          |".colorize(:red)
+puts "|        *******************************        |".colorize(:yellow)
+puts "-------------------------------------------------".colorize(:yellow)
 puts
 print "             Press Enter to continue             "
     temp = gets.chomp
     system("clear") if temp == ''
 
-print "          Choisis ton psaudo Joueur 1 !       "
+print "          Choisis ton pseudo Joueur 1 !       "
 p1 = gets.chomp
 j1 = Player.new("#{p1}", "X")
 puts
@@ -32,9 +32,9 @@ tab = [j1, j2]
 nb = Board.new
 ng = Game.new(tab, nb)
 puts
-puts "*************************************************"
-puts "-----Quelle originalité! Maintenant, jouons.-----"
-puts "*************************************************"
+puts "*************************************************".colorize(:yellow)
+puts "-----Quelle originalité! Maintenant, jouons.-----".colorize(:red)
+puts "*************************************************".colorize(:yellow)
 puts
 print "             Press Enter to continue             "
     temp = gets.chomp
@@ -44,21 +44,21 @@ print "             Celui qui commencera est :     #{ng.current_player.name}"
 final = ng.turn(ng.current_player.sign)
 if final == 1
     puts
-    puts "*************************************************"
-    puts "                 #{j1.name}, WIN!                "
-    puts "*************************************************"
+    puts "*************************************************".colorize(:yellow)
+    puts "                 #{j1.name}, WIN!                ".colorize(:light_blue)
+    puts "*************************************************".colorize(:yellow)
     puts
 elsif final == 2
     puts
-    puts "*************************************************"
-    puts "                 #{j2.name}, WIN!                "
-    puts "*************************************************"
+    puts "*************************************************".colorize(:yellow)
+    puts "                 #{j2.name}, WIN!                ".colorize(:light_blue)
+    puts "*************************************************".colorize(:yellow)
     puts
 else
     puts
-    puts "*************************************************"
-    puts "---------------------EX-AEQUO--------------------"
-    puts "*************************************************"
+    puts "*************************************************".colorize(:yellow)
+    puts "---------------------EX-AEQUO--------------------".colorize(:light_blue)
+    puts "*************************************************".colorize(:yellow)
     puts
 end
 

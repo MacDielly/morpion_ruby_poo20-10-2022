@@ -14,8 +14,8 @@ class Game
     def turn(playersigne)
         x = 3
         while game_end(x) == false #Tant que la partie n'est pas terminée
-            puts "\n\n                     C'est ton tour #{@current_player.name}" if @current_player.sign == playersigne
-            puts "\n\n                     C'est ton tour #{@other_player.name}" if @other_player.sign == playersigne        
+            puts "\n\n                 C'est ton tour ==> #{@current_player.name}".colorize(:cyan) if @current_player.sign == playersigne
+            puts "\n\n                 C'est ton tour ==> #{@other_player.name}".colorize(:cyan) if @other_player.sign == playersigne        
             @board.play_turn(playersigne) #Le joueur dont c'est le tour choisi une case à jouer 
             Show.new.show_state(@board.table) #Crée visuellement le tableau
             x = @board.end? #Vérifie la condition de fin de partie (retourne true ou false)

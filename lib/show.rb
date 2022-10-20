@@ -6,7 +6,7 @@ class Show
 #Affichage graphique du tableau
     def show_state(tab)
         @final_table = []
-        @final_table = tab 
+        @final_table = tab
         puts
         puts
         puts
@@ -20,7 +20,7 @@ class Show
         puts "             c      #{@final_table[6].sign}   |    #{@final_table[7].sign}   |   #{@final_table[8].sign}"   
         puts 
         puts 
-        puts
+        puts "          Quelle case cochera le prochain joueur?".colorize(:red)
         print "                  Press Enter to continue"
             temp = gets.chomp
             system("clear") if temp == ''
