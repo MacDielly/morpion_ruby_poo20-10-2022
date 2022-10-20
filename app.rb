@@ -11,7 +11,8 @@ require 'board'
 require 'board_case'
 require 'show'
 
-# #Message d'acceuil
+# Message d'acceuil
+system("clear")
 puts "-------------------------------------------------".colorize(:yellow)
 puts "|          Aujourd'hui, c'est Morpion!          |".colorize(:red)
 puts "|        *******************************        |".colorize(:yellow)
@@ -21,6 +22,7 @@ print "             Press Enter to continue             "
     temp = gets.chomp
     system("clear") if temp == ''
 
+#Choix des pseudonymes des deux joueurs
 print "          Choisis ton pseudo Joueur 1 !       "
 p1 = gets.chomp
 j1 = Player.new("#{p1}", "X")
@@ -28,9 +30,14 @@ puts
 print "        Et l'autre là, qui qu'c'est donc?     "
 p2 = gets.chomp
 j2 = Player.new("#{p2}", "O")
+system("clear")
+
+#Initialisation du jeu en liant les class Board et Game
 tab = [j1, j2]
 nb = Board.new
 ng = Game.new(tab, nb)
+
+#Ecran de transition
 puts
 puts "*************************************************".colorize(:yellow)
 puts "-----Quelle originalité! Maintenant, jouons.-----".colorize(:red)
@@ -40,7 +47,10 @@ print "             Press Enter to continue             "
     temp = gets.chomp
     system("clear") if temp == ''
 
+#Joueur dont c'est le tour en cours
 print "             Celui qui commencera est :     #{ng.current_player.name}"
+
+#Fins possibles
 final = ng.turn(ng.current_player.sign)
 if final == 1
     puts

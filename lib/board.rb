@@ -1,3 +1,4 @@
+#Class contenant 
 class Board
 
     attr_accessor :table, :turn
