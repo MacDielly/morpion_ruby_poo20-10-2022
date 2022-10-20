@@ -22,13 +22,25 @@ class Board
 
 #Le joueur dont c'est le tour choisi une case à jouer 
     def play_turn(player_sign)
-        puts "Quelle case souhaites tu cocher?"
+        puts "             Quelle case souhaites tu cocher?"
+
+        puts"                    1        2        3"
+        puts
+        puts "             a" 
+        puts ""
+        puts "             b"   
+        puts ""
+        puts "             c"   
+        puts 
+
+        puts
         choose_case = gets.chomp
         @table.each do |i|
             if choose_case == i.cases
                 i.sign = player_sign
             end
         end
+        system("clear")
         @turn = @turn + 1
     end
 

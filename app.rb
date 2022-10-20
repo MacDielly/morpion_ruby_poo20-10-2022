@@ -2,7 +2,7 @@
 require 'bundler'
 Bundler.require
 
-#Appelle la lib Ruby !!ERROR!!
+#Appelle la lib Ruby
 $:.unshift File.expand_path("./../lib", __FILE__)
 
 require 'game'
@@ -16,25 +16,50 @@ puts "-------------------------------------------------"
 puts "|          Aujourd'hui, c'est Morpion!          |"
 puts "|        *******************************        |"
 puts "-------------------------------------------------"
+puts
+print "             Press Enter to continue             "
+    temp = gets.chomp
+    system("clear") if temp == ''
 
-puts "Qui es-tu joueur 1 ?"
+print "          Choisis ton psaudo Joueur 1 !       "
 p1 = gets.chomp
 j1 = Player.new("#{p1}", "X")
-puts "Qui es-tu joueur 2 ?"
+puts
+print "        Et l'autre là, qui qu'c'est donc?     "
 p2 = gets.chomp
 j2 = Player.new("#{p2}", "O")
 tab = [j1, j2]
 nb = Board.new
 ng = Game.new(tab, nb)
+puts
+puts "*************************************************"
+puts "-----Quelle originalité! Maintenant, jouons.-----"
+puts "*************************************************"
+puts
+print "             Press Enter to continue             "
+    temp = gets.chomp
+    system("clear") if temp == ''
 
-#binding.pry
-
-puts "Celui qui commencera est : #{ng.current_player.name}"
+print "             Celui qui commencera est :     #{ng.current_player.name}"
 final = ng.turn(ng.current_player.sign)
 if final == 1
-    puts "Féliciation #{j1.name}, tu l'as éclaté"
+    puts
+    puts "*************************************************"
+    puts "                 #{j1.name}, WIN!                "
+    puts "*************************************************"
+    puts
 elsif final == 2
-    puts "Féliciation #{j2.name}, tu l'as éclaté"
+    puts
+    puts "*************************************************"
+    puts "                 #{j2.name}, WIN!                "
+    puts "*************************************************"
+    puts
 else
-    puts "Match nul bande de naze"
+    puts
+    puts "*************************************************"
+    puts "---------------------EX-AEQUO--------------------"
+    puts "*************************************************"
+    puts
 end
+
+#binding.pry
