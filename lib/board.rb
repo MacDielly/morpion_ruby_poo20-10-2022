@@ -1,8 +1,9 @@
-#Class contenant 
+#Class créant le tableau et les fins possibles
 class Board
 
     attr_accessor :table, :turn
 
+#Création du tableau
     def initialize
         @table = []
             @table << BoardCase.new("a1", " ")
@@ -17,10 +18,9 @@ class Board
         @turn = 0
     end
 
-#Le joueur dont c'est le tour choisi une case à jouer 
+#Interface visuelle d'aide au choix de la case
     def play_turn(player_sign)
         puts "             Quelle case souhaites tu cocher?"
-
         puts"                                       "
         puts
         puts "                    a1? |   a2?  |   a3?" 
@@ -30,8 +30,9 @@ class Board
         puts "                    c1? |   c2?  |   c3?"   
         puts 
         puts 
-
         puts
+
+#Choix de case de l'utilisateur
         choose_case = gets.chomp
         @table.each do |i|
             if choose_case == i.cases
@@ -42,7 +43,7 @@ class Board
         @turn = @turn + 1
     end
 
-#Conditions de victoire
+#Conditions de fins possibles
     def end?
         #Horizontale
         return 1 if @table[0].sign == "X" && @table[1].sign == "X" && @table[2].sign == "X"

@@ -1,3 +1,4 @@
+#Crée les emplacements du tableau
 class Show
 
     attr_accessor :final_table

@@ -1,5 +1,4 @@
-require "pry"
-
+#Crée la continuité de la partie par l'enchainement des tours
 class Game
 
     attr_accessor :players, :board, :current_player, :other_player
@@ -7,6 +6,8 @@ class Game
     def initialize(joueurs, board = Board.new)
         @players = joueurs
         @board = board
+
+#Choix aléatoire du joueur qui commence la partie
         @current_player, @other_player = @players.shuffle
     end
 
